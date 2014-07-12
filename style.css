@@ -159,7 +159,13 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 #what{ /*what is a guid */
 	position: relative;
 	overflow: hidden;
-	padding: 200px 0;
+	/*padding: 200px 0;*/
+	padding-top: 0px;
+	padding-bottom: 500px;
+	padding-right: 0px;
+	padding-left: 0px;
+	
+	
 }
 #how{ /*how do you treat a guid */
 	position: relative;
@@ -333,7 +339,7 @@ p#debug {position:fixed; right:10px; text-align:right; top:10px; }
 .solid{
 	margin-left: auto;
 	margin-right: auto;
-	border-width:2px;
+	border-width:5px;
 	border-color:#797874;
 	border-style:solid;
 }
