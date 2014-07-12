@@ -169,6 +169,10 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 }
 #how{ /*how do you treat a guid */
 	position: relative;
+	padding-top: 0px;
+	padding-bottom: 500px;
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 #slide2_5{ /* leaf image */
