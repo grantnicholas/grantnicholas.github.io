@@ -158,7 +158,7 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 	background-position: center;
 }
 
-#what{ /*what is a guid */
+#about{ /*what is a guid */
 	position: relative;
 	overflow: hidden;
 	/*padding: 200px 0;*/
@@ -169,7 +169,7 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 	
 	
 }
-#how{ /*how do you treat a guid */
+#projects{ /*how do you treat a guid */
 	position: relative;
 	padding-top: 0px;
 	padding-bottom: 500px;
