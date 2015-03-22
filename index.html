@@ -5,6 +5,8 @@ layout: default
 <div class="teaserimage">
     <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover }})"{% endif %}>
     <div id="searchbox">
+        <img class="spinner" src="{{ "/imgs/spinner.png" | prepend: site.baseurl }}" />
+        <script type="text/jsx;harmony=true" src="{{ "/assets/js/searchbar.js" | prepend: site.baseurl }}"></script>
       <h1> Teaser Image </h1>
     </div>
     </div>
