@@ -3,18 +3,18 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "Mediator"
+title: "28 hours later"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+   A blog about my adventures in programming
 
-email: a-mail@mail.mail
+email: grantnicholas2015@u.northwestern.edu
 #blog logo
 logo: "/assets/images/df_logo.jpg"
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
+name: 'Grant Nicholas'
+author: 'Grant Nicholas'
 author_image: "/assets/images/author.jpg"
 
 paginate:	5
@@ -25,8 +25,8 @@ baseurl: ""
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
-    desc: Follow me on twitter
+    # url:	https://twitter.com/dirkfabisch
+    # desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
