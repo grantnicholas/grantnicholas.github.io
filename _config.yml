@@ -19,8 +19,8 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://grantnicholas.github.io/" # the base hostname & protocol for your site
-baseurl: "/-blog"
+url: "http://grantnicholas.github.io/-blog/" # the base hostname & protocol for your site
+baseurl: ""
 
 # social icons and sharing options
 social:
