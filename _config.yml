@@ -9,13 +9,13 @@ description: > # this means to ignore newlines until "email:"
 
 email: grantnicholas2015@u.northwestern.edu
 #blog logo
-logo: "/assets/images/df_logo.jpg"
+logo: "/-blog/assets/images/df_logo.jpg"
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/-blog/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
 name: 'Grant Nicholas'
 author: 'Grant Nicholas'
-author_image: "/assets/images/author.jpg"
+author_image: "/-blog/assets/images/author.jpg"
 
 paginate:	5
 
@@ -39,8 +39,8 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
-    desc:	Fork me on github
+    url:	https://github.com/grantnicholas
+    desc:	Look at my projects on github
     share_url:
     share_title:
     share_link:
