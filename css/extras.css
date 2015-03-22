@@ -10,7 +10,7 @@
 	height: 900px !important;
 }
 
-.teaserimage > .teaserimage-image > #searchbox > h1{
+.teaserimage > .teaserimage-image > #searchbar > h1{
 	color: white;
 	z-index: 2;
 	margin-top: 200px;
