@@ -11,11 +11,13 @@ email: grantnicholas2015@u.northwestern.edu
 #blog logo
 logo: "/-blog/assets/images/df_logo.jpg"
 # blog cover
-cover: "/-blog/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+# cover: "/-blog/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/-blog/assets/images/cover.jpg"
 
 name: 'Grant Nicholas'
 author: 'Grant Nicholas'
-author_image: "/-blog/assets/images/author.jpg"
+# author_image: "/-blog/assets/images/author.jpg"
+author_image: "/-blog/assets/images/grant_nicholas.jpg"
 
 paginate:	5
 

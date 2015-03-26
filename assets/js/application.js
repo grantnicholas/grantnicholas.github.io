@@ -1,11 +1,11 @@
 console.log('require.js');
 
 require.config({
-  "baseUrl" : "/newblog/js",
+  "baseUrl" : "/-blog/assets/js",
   "paths"   : {
     "jquery"     : "jquery",
     "underscore" : "underscore",
-    "searchdata"        : "searchdata", 
+    "searchdata" : "searchdata", 
   },
   "shim" : {
     "jquery" : {

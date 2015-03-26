@@ -4,11 +4,14 @@ layout: default
 
 <div class="teaserimage">
     <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover }})"{% endif %}>
-    <div id="searchbar">
-        <img class="spinner" src="{{ "/images/spinner.png" | prepend: site.baseurl }}" />
-        <script type="text/jsx;harmony=true" src="{{ "/assets/js/searchbar.js" | prepend: site.baseurl }}"></script>
-      <h1> Teaser Image </h1>
-    </div>
+      <div class="descrip-wrap center-75">
+        <div class="page-title center-75"> 28 days later</div>
+        <div class="page-descrip center-75"> A blog about my adventures in programming</div>
+        <div id="search-container" class="center-75">
+            <img class="spinner" src="{{ "/assets/images/spinner.png" | prepend: site.baseurl }}" />
+            <script type="text/jsx;harmony=true" src="{{ "/assets/js/searchbar.js" | prepend: site.baseurl }}"></script>
+        </div>
+      </div>
     </div>
 </div>
 

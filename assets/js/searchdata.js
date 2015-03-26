@@ -1,3 +1,4 @@
+console.log('searchdata.js');
 var blog_data= [
     {
         "comments": true,

@@ -177,7 +177,7 @@ require(["jquery", "underscore"], function ($, _){
     
     React.render(
       <SearchBox data={blog_data}/>,
-      document.getElementById('searchbar')
+      document.getElementById('search-container')
     );
 
 
