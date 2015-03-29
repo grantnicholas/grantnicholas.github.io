@@ -7,7 +7,7 @@ require(["jquery", "underscore"], function ($, _){
       render: function(){
         return (
           <li className={this.props.is_selected}> 
-            <a href= {this.props.filename}>
+            <a href= {this.props.url}>
             <div className = "row">
               <div className="large-3 columns">
                 <img src={this.props.img}/>
@@ -45,7 +45,7 @@ require(["jquery", "underscore"], function ($, _){
             count+=1;
             return bool;
           });
-          var post_title = the_post[0].filename;
+          var post_title = the_post[0].url;
           location.href = post_title;
         }
         //up
@@ -89,9 +89,9 @@ require(["jquery", "underscore"], function ($, _){
         var is_selected = outer_this.state.cursor == count ? "is_selected" : "";
         count+=1;
         console.log(is_selected);
-        console.log(post.filename);
+        console.log(post.url);
         return (
-          <Post title={post.title} filename={post.filename} img={post.image} keywords={post.keywords} is_selected={is_selected}/>
+          <Post title={post.title} filename={post.filename} url={post.url} img={post.image} keywords={post.keywords} is_selected={is_selected}/>
         );
       });
 
@@ -134,14 +134,15 @@ require(["jquery", "underscore"], function ($, _){
       },
 
       get_filt_data: function(query_text){
+        lower_text = query_text.toLowerCase();
         var filt_data = this.props.data.filter(function(post){
 
           var boolwords = post.keywords.map(function(word){
-            return word.toLowerCase().indexOf(query_text)!=-1
+            return word.indexOf(lower_text)!=-1
           });
 
           return (
-            post.filename.toLowerCase().indexOf(query_text)!=-1 ||
+            post.filename.indexOf(lower_text)!=-1 ||
             _.some(boolwords)
           )
         });

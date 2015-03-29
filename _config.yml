@@ -9,7 +9,8 @@ description: > # this means to ignore newlines until "email:"
 
 email: grantnicholas2015@u.northwestern.edu
 #blog logo
-logo: "/-blog/assets/images/df_logo.jpg"
+# logo: "/-blog/assets/images/df_logo.jpg"
+logo: "/-blog/assets/images/GN.jpg"
 # blog cover
 # cover: "/-blog/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 cover: "/-blog/assets/images/cover.jpg"
