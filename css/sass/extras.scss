@@ -19,7 +19,7 @@ Override styles
   white-space: nowrap;
   border-radius: 3px;
   background: rgba(0,0,0,0.05);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
@@ -103,10 +103,12 @@ html, body, .page-content, .wrapper, .teaserimage{
 	li{
 		list-style-type: none;
 		background-color: #FFFFFF;
+    padding-top:    2%;
+    padding-bottom: 2%;
 
-  		border: solid;
+  	border: solid;
 		border-color: black;
-  		border-width: thick;
+  	// border-width: thick;
 
 		img{
 			min-width:  50px;

@@ -2,7 +2,6 @@
 layout: post
 date: 2015-03-20 18:49:48
 title: "Updated blog"
-image: /-blog/assets/images/cover.jpg
 ---
 
 #With spring comes spring cleaning!
