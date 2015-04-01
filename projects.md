@@ -88,7 +88,7 @@ image: /assets/images/cover.jpg
                     <div style="font-weight: bold">Technologies used:</div>
                     <ol>
                         <li>PHP: Backend to serve information.</li>
-                        <li>JavaScript: Vanilla JS frontend to display information./li>
+                        <li>JavaScript: Vanilla JS frontend to display information.</li>
                         <li>HTML/CSS: Designed and created a fully responsive website.</li>
                     </ol>
                 </div>
