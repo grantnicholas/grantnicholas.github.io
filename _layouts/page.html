@@ -1,58 +1,88 @@
----
----
 <!DOCTYPE html>
 <html>
+
   {% include head.html %}
-  <body itemscope itemtype="http://schema.org/Article">
+
+  <body>
+
     {% include header.html %}
-    <main class="content" role="main">
-      <article class="post">
-        {% if page.image %}
-        <div class="article-image">
-          <div class="post-image-image" style="background-image: url({% if page.image %}{{ page.image }}{% endif %})">
-            Article Image
+
+    <!-- content start -->
+
+    <div class="page-content">
+      <div class="wrapper">
+
+
+        <div class="teaserimage" style="height: 75% !important;">
+          <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover }})"{% endif %}>
+            <div class="descrip-wrap center-75">
+
+                <div class="post-meta">
+                  <div class="content" id="fakecontent">
+                    <h1 class="post-title">{{ page.title }}</h1>
+                    <div class="cf post-meta-text">
+                      <div class="author-image" style="background-image: url({{ site.author_image }})">Blog Logo</div>
+                      <h4 class="author-name" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Grant Nicholas</h4>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
-          <div class="post-meta">
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="cf post-meta-text">
-              <div class="author-image" style="background-image: url({{ site.author_image }})">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ site.author }}</h4>
-            </div>
-            <div style="text-align:center">
-              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
-            </div>
+
+          <div class="center-75 arrow-down">
+            <a href="#main-content"><img class="center-75 icon" src="/-blog/assets/images/angle_down.png"/> </a>
           </div>
         </div>
-        {% else %}
-        <div class="noarticleimage">
-          <div class="post-meta">
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="cf post-meta-text">
-              <div class="author-image" style="background-image: url({{ page.author_image }})">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ page.author }}</h4>
-            </div>
+
+
+        <main class="content" role="main">
+          <article class="post">
+            <section class="post-content" id="main-content" style="padding-top: 0px !important;">
+              {{content}}
+<!--               <div class="center-50">
+                <a href="{{ "/" | prepend: site.baseurl }}" class="btn-new center-50">Back to main page/a>
+              </div> -->
+            </section>
+
+            <div class="bottom-teaser cf">
+              <div class="isLeft">
+                <h5 class="index-headline featured"><span>Written by</span></h5>
+                <section class="author">
+                  <div class="author-image" style="background-image: url({{site.author_image}})">Blog Logo</div>
+                  <h4>{{ site.author }}</h4>
+                  <p class="bio">{{author.bio}}</p>
+                  <hr>
+                </section>
+              </div>
+
+              <div class="isRight">
+                <h5 class="index-headline featured"><span>Supported by</span></h5>
+                <footer class="site-footer">
+                  <!-- <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section> -->
+                  <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+                  <div class="inner">
+                    <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{site.author}}</a> &copy; <br>All rights reserved.</section>
+                  </div>
+                  <a href="{{ "/" | prepend: site.baseurl }}" class="btn-new" style="margin-top: 20px;">Back to main page</a>
+                </footer>
+              </div>
           </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        {% endif %}
-        <section class="post-content">
-          <a name="topofpage"></a>
-          {{content}}
-        </section>
-      </article>
-    </main>
-    <div class="bottom-closer">
-      <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover }})"{% endif %}>
-        Image
+
+          </article>
+        </main>
+
+
       </div>
-      <div class="inner">
-        <h1 class="blog-title">{{ site.title }}</h1>
-        <h2 class="blog-description">{{ site.description }}</h2>
-        <a href="{{ "/" | prepend: site.baseurl }}" class="btn">Back to Overview</a>
-      </div>
+
+
     </div>
+
+    <!-- content end -->
+
+    {% include footer.html %}
     {% include javascripts.html %}
+
   </body>
+
 </html>

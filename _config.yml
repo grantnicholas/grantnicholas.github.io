@@ -3,7 +3,7 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "28 hours later"
+title: "grantnicholas.io"
 description: > # this means to ignore newlines until "email:"
    A blog about my adventures in programming
 
@@ -17,7 +17,6 @@ cover: "/-blog/assets/images/cover.jpg"
 
 name: 'Grant Nicholas'
 author: 'Grant Nicholas'
-# author_image: "/-blog/assets/images/author.jpg"
 author_image: "/-blog/assets/images/grant_nicholas.jpg"
 
 paginate:	5
@@ -34,12 +33,12 @@ social:
     share_title: ?text=
     share_link: "&amp;url="
 
-#  - icon:	facebook
-#    url:	https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: https://www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
+  - icon:	facebook
+    # url:	https://facebook.com/???
+    # desc: Connect with me facebook
+    share_url: https://www.facebook.com/sharer.php
+    share_title: ?t=
+    share_link: "&amp;u="
 
   - icon:	github
     url:	https://github.com/grantnicholas

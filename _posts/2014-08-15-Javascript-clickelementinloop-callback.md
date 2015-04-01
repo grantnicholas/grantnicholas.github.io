@@ -3,15 +3,17 @@ layout: post
 title: Adding click handlers in a loop with javascript closures
 ---
 I wanted to make an array of elements on a page all have an event happen on click. 
-I first tried-
+I first tried:
 
 
 
-`for(var i=0; i<array.length; i++){
+```
+for(var i=0; i<array.length; i++){
 	jQuery(array[i]).click(function(){
 		coolEventGoesHere();
 	});
-}`
+}
+```
 
 
 
@@ -27,23 +29,24 @@ Create a callback function that returns a function.
 
 
 
-`function createCallback(i){
+```
+function createCallback(i){
   return function(){
     jQuery(array[i]).toggle();
   }
 }`
-
+```
 
 
 Call the callback function while looping through and assigning the click elements. 
 
 
-
-`$(document).ready(function(){
+```
+$(document).ready(function(){
   for(var i = 1; i < array.length; i++) {
     jQuery(array[i]).click( createCallback( i ) );
   }
-});`
-
+});
+```
 
 

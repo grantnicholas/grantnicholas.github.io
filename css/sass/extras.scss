@@ -1,13 +1,43 @@
-/*.post-content{
-	margin-top: 100vh;
-}*/
+/*
+Override styles
+*/
+
+.btn-new{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  padding: 0 15px;
+  border: #bfc8cd 1px solid;
+  opacity: 1;
+  color: #9EABB3;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.05);
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+.btn-new:hover{
+	background-color: #FFFFFF;
+}
 
 .teaserimage-image{
 	text-indent: 0px !important;
 }
 
+
+html, body, .page-content, .wrapper, .teaserimage{
+  height: 100%;
+}
+
 .teaserimage{
-	height: 900px !important;
+	height: 100% !important;
 }
 
 .center-75{
@@ -29,10 +59,11 @@
 .descrip-wrap{
 	margin-top: 10%;
 	text-align: center;
+	word-wrap: break-word;
 
 	.page-title{
 		-webkit-text-stroke: 1px black;
-		font-size: 5rem;
+		font-size: 4rem;
 		letter-spacing: -1px;
 		font-weight: 700;
 		font-family: "Open Sans", sans-serif;
@@ -52,7 +83,7 @@
 #search-container{
 
   #search-bar{
-  	min-width: 100%;
+    min-width: 80%;
   	font-size: 20px;
 
   }
@@ -64,10 +95,10 @@
     padding-left: 0px;
     padding-right: 0px;
 
-    max-width: 100%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-	margin-top: 0px;
+	  margin-top: 0px;
 
 	li{
 		list-style-type: none;
@@ -109,56 +140,202 @@
 	}
 }
 
-// @-moz-keyframes spinner{
-// 	from {
-// 	    -webkit-transform: rotate(0deg);
-// 	    -moz-transform: rotate(0deg);
-// 	    -o-transform: rotate(0deg);    
-// 	    -ms-transform: rotate(0deg); 
-// 	    transform: rotate(0deg);
-// 	}
-// 	to {
-// 	    -webkit-transform: rotate(359deg);
-// 	    -moz-transform: rotate(359deg);
-// 	    -o-transform: rotate(359deg);    
-// 	    -ms-transform: rotate(359deg); 
-// 	    transform: rotate(359deg);
-// 	}
+.arrow-down{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  left: 0;
+  right: 0;
+
+  a{
+    img{
+      max-width:  30px;
+      max-height: 30px;
+    }
+  }
+}
+
+.icon{
+  max-width: 30px;
+  max-height: 30px;
+  vertical-align: middle;
+  transition: all ease .3s;
+  opacity: .7;
+}
+
+.icon:hover{
+  transition: all ease .3s;
+  opacity: 1;
+}
+
+#github{
+  text-align: center;
+  img{
+    transition: all ease !important;
+    max-width:  50px !important;
+    max-height: 50px !important;
+  }
+}
+
+
+.custom-links{
+	font-size: 30px;
+}
+
+.post-header{
+  transition: all ease .3s;
+  opacity: .8;
+}
+.post-header:hover{
+  transition: all ease .3s;
+  opacity: 1;
+}
+
+
+/*
+posts
+*/
+
+// .post-title{
+//   font-weight: 700;
+//     font-style: normal;
+//     letter-spacing: -0.04em;
+//     font-size: 50px;
+//     line-height: 1.1;
+//     color: #fff;
+//     margin-bottom: 16px;
+//     text-shadow: 0px 1px 16px rgba(0, 0, 0, 0.5), 0px 0px 1px rgba(0, 0, 0, 0.5);
 // }
 
-// @-webkit-keyframes spinner{
-// 	from {
-// 	    -webkit-transform: rotate(0deg);
-// 	    -moz-transform: rotate(0deg);
-// 	    -o-transform: rotate(0deg);    
-// 	    -ms-transform: rotate(0deg); 
-// 	    transform: rotate(0deg);
-// 	}
-// 	to {
-// 	    -webkit-transform: rotate(359deg);
-// 	    -moz-transform: rotate(359deg);
-// 	    -o-transform: rotate(359deg);    
-// 	    -ms-transform: rotate(359deg); 
-// 	    transform: rotate(359deg);
-// 	}
+// .author-image{
+//   display: inline-block;
+//   width: 60px;
+//   height: 60px;
+//   line-height: 30px;
+//   border-radius: 100%;
 // }
 
-// @keyframes spinner{
-// 	from {
-// 	    -webkit-transform: rotate(0deg);
-// 	    -moz-transform: rotate(0deg);
-// 	    -o-transform: rotate(0deg);    
-// 	    -ms-transform: rotate(0deg); 
-// 	    transform: rotate(0deg);
-// 	}
-// 	to {
-// 	    -webkit-transform: rotate(359deg);
-// 	    -moz-transform: rotate(359deg);
-// 	    -o-transform: rotate(359deg);    
-// 	    -ms-transform: rotate(359deg); 
-// 	    transform: rotate(359deg);
-// 	}
-// }
+#fakecontent{
+  margin-top: 25%;
+}
+
+.post-meta{
+  .content{
+    .post-title{
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: -0.04em;
+      font-size: 50px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 16px;
+      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+.author-image{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 8px;
+  background-size: cover;
+  border-radius: 100%;
+  text-indent: -9999px;
+}
+
+.author-name{
+  display: inline;
+}
+
+:not(.noarticleimage){
+
+  .post-meta{
+
+    .post-meta-text{
+      color: rgba(255,255,255,0.75);
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      font-style: normal;
+      text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5);
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        color: rgba(255,255,255,0.75);
+        &:hover{
+          color: rgba(255,255,255,1);
+        }
+      }
+    }
+
+  }
+
+}
+
+.noarticleimage{
+  .post-meta{
+    .post-meta-text{
+      color: #b3b3b1;
+      text-shadow: none;
+    }
+  }
+}
+
+/*
+Media Queries
+*/
+
+@media only screen and (max-width: 900px) {
+  /* line 229, ../sass/main.scss */
+  #search-box {
+    display: none;
+  }
+}
+
+
+
+/*
+Animations
+*/
+
+.arrow-down{
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+}
+
+
+@-webkit-keyframes bounce {
+    0%, 10%, 25%, 40%, 50% {
+        -webkit-transform: translateY(0) ;
+                transform: translateY(0) ;
+    }
+    20% {
+        -webkit-transform: translateY(-10px) ;
+                transform: translateY(-10px) ;
+    }
+    30% {
+        -webkit-transform: translateY(-5px) ;
+                transform: translateY(-5px) ;
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0) ;
+                transform: translateY(0) ;
+    }
+    40% {
+        -webkit-transform: translateY(-10px) ;
+                transform: translateY(-10px) ;
+    }
+    60% {
+        -webkit-transform: translateY(-5px) ;
+                transform: translateY(-5px) ;
+    }
+}
+
 
 .spinner {
   max-width: 200px;

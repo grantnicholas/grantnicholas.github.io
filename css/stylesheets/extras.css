@@ -1,17 +1,49 @@
-/*.post-content{
-	margin-top: 100vh;
-}*/
+/*
+Override styles
+*/
 /* line 5, ../sass/extras.scss */
+.btn-new {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  padding: 0 15px;
+  border: #bfc8cd 1px solid;
+  opacity: 1;
+  color: #9EABB3;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+/* line 26, ../sass/extras.scss */
+.btn-new:hover {
+  background-color: #FFFFFF;
+}
+
+/* line 30, ../sass/extras.scss */
 .teaserimage-image {
   text-indent: 0px !important;
 }
 
-/* line 9, ../sass/extras.scss */
-.teaserimage {
-  height: 900px !important;
+/* line 35, ../sass/extras.scss */
+html, body, .page-content, .wrapper, .teaserimage {
+  height: 100%;
 }
 
-/* line 13, ../sass/extras.scss */
+/* line 39, ../sass/extras.scss */
+.teaserimage {
+  height: 100% !important;
+}
+
+/* line 43, ../sass/extras.scss */
 .center-75 {
   z-index: 2;
   margin-left: auto;
@@ -20,7 +52,7 @@
   width: 75%;
 }
 
-/* line 21, ../sass/extras.scss */
+/* line 51, ../sass/extras.scss */
 .center-50 {
   z-index: 2;
   margin-left: auto;
@@ -29,21 +61,22 @@
   width: 50%;
 }
 
-/* line 29, ../sass/extras.scss */
+/* line 59, ../sass/extras.scss */
 .descrip-wrap {
   margin-top: 10%;
   text-align: center;
+  word-wrap: break-word;
 }
-/* line 33, ../sass/extras.scss */
+/* line 64, ../sass/extras.scss */
 .descrip-wrap .page-title {
   -webkit-text-stroke: 1px black;
-  font-size: 5rem;
+  font-size: 4rem;
   letter-spacing: -1px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   color: #fff;
 }
-/* line 42, ../sass/extras.scss */
+/* line 73, ../sass/extras.scss */
 .descrip-wrap .page-descrip {
   font-size: 2rem;
   line-height: 1.5em;
@@ -53,22 +86,22 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 54, ../sass/extras.scss */
+/* line 85, ../sass/extras.scss */
 #search-container #search-bar {
-  min-width: 100%;
+  min-width: 80%;
   font-size: 20px;
 }
 
-/* line 63, ../sass/extras.scss */
+/* line 94, ../sass/extras.scss */
 #search-items {
   padding-left: 0px;
   padding-right: 0px;
-  max-width: 100%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
 }
-/* line 72, ../sass/extras.scss */
+/* line 103, ../sass/extras.scss */
 #search-items li {
   list-style-type: none;
   background-color: #FFFFFF;
@@ -76,7 +109,7 @@
   border-color: black;
   border-width: thick;
 }
-/* line 80, ../sass/extras.scss */
+/* line 111, ../sass/extras.scss */
 #search-items li img {
   min-width: 50px;
   min-height: 50px;
@@ -84,27 +117,195 @@
   maxheight: 100px;
   margin: 5px;
 }
-/* line 89, ../sass/extras.scss */
+/* line 120, ../sass/extras.scss */
 #search-items li:hover, #search-items li.is_selected {
   background-color: #F6F1DB;
 }
 
-/* line 96, ../sass/extras.scss */
+/* line 127, ../sass/extras.scss */
 #search-bar:not(:valid) + ul {
   display: none;
 }
 
-/* line 100, ../sass/extras.scss */
+/* line 131, ../sass/extras.scss */
 #search-bar:valid + ul {
   display: block;
 }
 
-/* line 106, ../sass/extras.scss */
+/* line 137, ../sass/extras.scss */
 #post-container ul li {
   list-style-type: none;
 }
 
-/* line 163, ../sass/extras.scss */
+/* line 143, ../sass/extras.scss */
+.arrow-down {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  left: 0;
+  right: 0;
+}
+/* line 151, ../sass/extras.scss */
+.arrow-down a img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+/* line 158, ../sass/extras.scss */
+.icon {
+  max-width: 30px;
+  max-height: 30px;
+  vertical-align: middle;
+  transition: all ease .3s;
+  opacity: .7;
+}
+
+/* line 166, ../sass/extras.scss */
+.icon:hover {
+  transition: all ease .3s;
+  opacity: 1;
+}
+
+/* line 171, ../sass/extras.scss */
+#github {
+  text-align: center;
+}
+/* line 173, ../sass/extras.scss */
+#github img {
+  transition: all ease !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+}
+
+/* line 181, ../sass/extras.scss */
+.custom-links {
+  font-size: 30px;
+}
+
+/* line 185, ../sass/extras.scss */
+.post-header {
+  transition: all ease .3s;
+  opacity: .8;
+}
+
+/* line 189, ../sass/extras.scss */
+.post-header:hover {
+  transition: all ease .3s;
+  opacity: 1;
+}
+
+/*
+posts
+*/
+/* line 218, ../sass/extras.scss */
+#fakecontent {
+  margin-top: 25%;
+}
+
+/* line 224, ../sass/extras.scss */
+.post-meta .content .post-title {
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  font-size: 50px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 16px;
+  text-shadow: 0px 1px 16px rgba(0, 0, 0, 0.5), 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 237, ../sass/extras.scss */
+.author-image {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 8px;
+  background-size: cover;
+  border-radius: 100%;
+  text-indent: -9999px;
+}
+
+/* line 248, ../sass/extras.scss */
+.author-name {
+  display: inline;
+}
+
+/* line 256, ../sass/extras.scss */
+:not(.noarticleimage) .post-meta .post-meta-text {
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25), 0px 0px 1px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* line 266, ../sass/extras.scss */
+:not(.noarticleimage) .post-meta .post-meta-text a {
+  color: rgba(255, 255, 255, 0.75);
+}
+/* line 268, ../sass/extras.scss */
+:not(.noarticleimage) .post-meta .post-meta-text a:hover {
+  color: white;
+}
+
+/* line 280, ../sass/extras.scss */
+.noarticleimage .post-meta .post-meta-text {
+  color: #b3b3b1;
+  text-shadow: none;
+}
+
+/*
+Media Queries
+*/
+@media only screen and (max-width: 900px) {
+  /* line 229, ../sass/main.scss */
+  /* line 293, ../sass/extras.scss */
+  #search-box {
+    display: none;
+  }
+}
+/*
+Animations
+*/
+/* line 304, ../sass/extras.scss */
+.arrow-down {
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%, 10%, 25%, 40%, 50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+/* line 340, ../sass/extras.scss */
 .spinner {
   max-width: 200px;
   max-height: 200px;

@@ -135,15 +135,22 @@ require(["jquery", "underscore"], function ($, _){
 
       get_filt_data: function(query_text){
         lower_text = query_text.toLowerCase();
+        query_words = lower_text.split(' ');
+
         var filt_data = this.props.data.filter(function(post){
 
           var boolwords = post.keywords.map(function(word){
             return word.indexOf(lower_text)!=-1
           });
 
+          var boolwords2 = query_words.map(function(word){
+            return _.contains(post.keywords, word)
+          });
+
           return (
             post.filename.indexOf(lower_text)!=-1 ||
-            _.some(boolwords)
+            // _.some(boolwords) || 
+            _.some(boolwords2)
           )
         });
 

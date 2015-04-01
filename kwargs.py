@@ -42,18 +42,25 @@ def get_dict_topn(adict, n):
 
 def get_meta(filestring):
     empty, meta, post = filestring.split('---')
-    print meta
     meta_dict = parse_yaml(meta)
-    # meta_dict = {
-    #     data.split('=')[0]: data.split('=')[1]
-    #     for data in meta.strip().split('\n')
-    # }
     return meta_dict
 
 
 def get_post_words(filestring):
     empty, meta, post = filestring.split('---')
-    words = post.split(' ')
+
+    """
+    Remove code blocks which are wrapped in ``` from our post words dictionary. 
+    Code blocks turn our relevant post words into useless syntax and nonsense.
+    """
+
+    nocodepost = reduce(lambda x,y: x+' '+y,
+                        map(lambda x: x[1],
+                            filter(lambda x: x[0] % 2 == 0,
+                                   enumerate(post.split('```')))))
+
+    print nocodepost
+    words = nocodepost.split(' ')  #post
     filtered_words = filter(lambda x: x.strip().lower() not in STOPWORDS, words)
     word_dict = {}
     for word in filtered_words:
@@ -66,36 +73,56 @@ def get_post_words(filestring):
     return word_dict
 
 
+def each_file(files, filename, f, posts=True):
+    data = f.read()
+    meta_data = get_meta(data)
+    topn = get_dict_topn(get_post_words(data), 10)
+    filt_topn = filter(lambda x: x[1]>1, topn)
+    _keywords = dict(filt_topn)
+
+    if "tags" in meta_data:
+        keywords = map(lambda x: x, _keywords).extend([meta_data["tags"]])
+        meta_data.pop("tags")
+    else:
+        keywords = map(lambda x: x, _keywords)
+
+    mod_filename = filename.split('/')[-1].split('.md')[0]
+    if posts:
+        args = filename.replace('.md', '')
+        args = args.lstrip('_posts/.').split('-')
+        thedate = args[0:3]
+        thepost = args[3:]
+        theurl = '/'.join(thedate) + '/' + '-'.join(thepost)
+        theurl = '/-blog/' + theurl + '.html'
+    else:
+        theurl = '/-blog/' + filename.strip('.md').strip('/') + '/'
+
+    keywords = keywords+['post'] if keywords is not None else ['post']
+    keywords = filter(lambda x: x != '' and x != ' ', keywords)
+    titlewords = map(lambda x: x.lower(), meta_data['title'].split(' '))
+    keywords = keywords + titlewords
+    meta_data["filename"] = mod_filename.lower()
+    meta_data["url"] = theurl
+    meta_data["keywords"] = keywords
+    if 'date' in meta_data:
+        meta_data.pop('date')
+    files.append(meta_data)
+    pprint(meta_data)
+    return None
+
+
 def main():
     files = []
     for filename in glob.glob('./_posts/./*.md'):
         with open(filename, 'r') as f:
-            data = f.read()
-            meta_data = get_meta(data)
-            pprint(meta_data)
-            topn = get_dict_topn(get_post_words(data), 10)
-            filt_topn = filter(lambda x: x[1]>1, topn)
-            _keywords = dict(filt_topn)
-            if "tags" in meta_data:
-                keywords = map(lambda x: x, _keywords) + meta_data["tags"]
-                meta_data.pop("tags")
-            else:
-                keywords = map(lambda x: x, _keywords) 
+            each_file(files, filename, f)
 
-            mod_filename = filename.split('/')[-1].split('.md')[0]
-            args = filename.strip('.md').strip('_posts/.').split('-')
-            thedate = args[0:3]
-            thepost = args[3:]
-            print thedate, thepost
-            theurl = '/'.join(thedate) + '/' + '-'.join(thepost)
-            theurl = theurl + '.html'
-            pprint(meta_data)
-            meta_data["filename"] = mod_filename.lower()
-            meta_data["url"] = theurl
-            meta_data["keywords"] = keywords 
-            files.append(meta_data)
+    otherfiles = ['./about.md']
+    for filename in otherfiles:
+        with open(filename, 'r') as f:
+            each_file(files, filename, f, False)
 
-    pprint(files)
+    # pprint(files)
     with open('./assets/js/searchdata.js', 'w') as f:
         f.write('var blog_data= ')
         f.write(json.dumps(files, sort_keys=True, indent=4, separators=(',',': ')))
