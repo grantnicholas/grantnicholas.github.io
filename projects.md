@@ -8,9 +8,6 @@ image: /assets/images/cover.jpg
 ---
 ***Featured Projects***
 <style>
-    .content{
-        max-width: 1000px !important;
-    }
     li{
         font-size: 15px !important;
         list-style-type: none;
