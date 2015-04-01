@@ -76,7 +76,7 @@ image: /assets/images/cover.jpg
     </li>
     <li class="row" style="list-style-type: none;">
         <div>
-            <a href="www.dbridgesolutions.com/"><img class="large-8-columns mov" src="{{ "/assets/images/dbridge.png" | prepend: site.baseurl }}"></a>
+            <a href="http://www.dbridgesolutions.com/"><img class="large-8-columns mov" src="{{ "/assets/images/dbridge.png" | prepend: site.baseurl }}"></a>
             </img>
             <div class="large-4 columns">
                 <div style="font-weight: bold">Digital Bridge Solutions</div>
