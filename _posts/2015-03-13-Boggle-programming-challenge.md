@@ -16,9 +16,6 @@ So I wrote a naive/brute force solution below in python that simply prints out a
 
 One note: I did not feel like implementing a simple dictionary for word lookup so I just hardcoded a testdictionary with some sample words to verify the program was working. It is left as an exercise to the reader to find a good database of words for word lookup.
 
-Update: 2015-01-16
-Optimizations for speeding up the search
-check it out here!
 
 ```
 

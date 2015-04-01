@@ -10,19 +10,20 @@ description: > # this means to ignore newlines until "email:"
 email: grantnicholas2015@u.northwestern.edu
 #blog logo
 # logo: "/-blog/assets/images/df_logo.jpg"
-logo: "/-blog/assets/images/GN.jpg"
+logo: "/assets/images/GN.jpg"
 # blog cover
 # cover: "/-blog/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
-cover: "/-blog/assets/images/cover.jpg"
+cover: "/assets/images/cover.jpg"
 
 name: 'Grant Nicholas'
 author: 'Grant Nicholas'
-author_image: "/-blog/assets/images/grant_nicholas.jpg"
+author_image: "/assets/images/grant_nicholas.jpg"
 
 paginate:	5
 
-url: "http://grantnicholas.github.io/-blog/" # the base hostname & protocol for your site
-baseurl: "/-blog"
+url: "http://grantnicholas.github.io/" # the base hostname & protocol for your site
+# baseurl: "/-blog"
+baseurl: ""
 
 # social icons and sharing options
 social:

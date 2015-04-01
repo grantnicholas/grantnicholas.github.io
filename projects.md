@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 categories: mediator feature
 tags: featured
-image: /-blog/assets/images/cover.jpg
+image: /assets/images/cover.jpg
 ---
 ***Featured Projects***
 <style>

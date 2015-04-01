@@ -2,37 +2,37 @@ require(["jquery", "underscore"], function ($, _){
   $(function() {
       console.log('in searchbar.js');
 
-      var Post = React.createClass({
+      var Post = React.createClass({displayName: "Post",
 
       render: function(){
 
         if(this.props.img === undefined){
           return (
-            <li className={this.props.is_selected}> 
-              <a href= {this.props.url}>
-              <div className = "row">
-                <div className="large-9 columns">
-                  {this.props.title}
-                </div>
-              </div>
-              </a>
-            </li>
+            React.createElement("li", {className: this.props.is_selected}, 
+              React.createElement("a", {href: this.props.url}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "large-9 columns"}, 
+                  this.props.title
+                )
+              )
+              )
+            )
           );
         }
         else{
           return (
-            <li className={this.props.is_selected}> 
-              <a href= {this.props.url}>
-              <div className = "row">
-                <div className="large-3 columns">
-                    <img src={this.props.img}/>
-                </div>
-                <div className="large-9 columns">
-                  {this.props.title}
-                </div>
-              </div>
-              </a>
-            </li>
+            React.createElement("li", {className: this.props.is_selected}, 
+              React.createElement("a", {href: this.props.url}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "large-3 columns"}, 
+                    React.createElement("img", {src: this.props.img})
+                ), 
+                React.createElement("div", {className: "large-9 columns"}, 
+                  this.props.title
+                )
+              )
+              )
+            )
           );
         } 
       }
@@ -40,7 +40,7 @@ require(["jquery", "underscore"], function ($, _){
     });
        
 
-    var PostList = React.createClass({
+    var PostList = React.createClass({displayName: "PostList",
       getInitialState:function(){
         return{
             cursor: 0
@@ -53,26 +53,24 @@ require(["jquery", "underscore"], function ($, _){
 
       handleKeyPress: function(e) {
         //enter
-        if(e.keyCode=='13' || e.keyCode=='38' || e.keyCode=='40'){
-          if(e.keyCode=='13'){
-            var count = 0;
-            var cursor = this.state.cursor;
-            var the_post = this.props.data.filter(function(post){
-              var bool = cursor == count;
-              count+=1;
-              return bool;
-            });
-            var post_title = the_post[0].url;
-            location.href = post_title;
-          }
-          //up
-          if(e.keyCode=='38'){
-            this.set_cursor_up();
-          }
-          //down
-          if(e.keyCode=='40'){
-            this.set_cursor_down();
-          }
+        if(e.keyCode=='13'){
+          var count = 0;
+          var cursor = this.state.cursor;
+          var the_post = this.props.data.filter(function(post){
+            var bool = cursor == count;
+            count+=1;
+            return bool;
+          });
+          var post_title = the_post[0].url;
+          location.href = post_title;
+        }
+        //up
+        if(e.keyCode=='38'){
+          this.set_cursor_up();
+        }
+        //down
+        if(e.keyCode=='40'){
+          this.set_cursor_down();
         }
         else{
           this.setState({cursor : 0});
@@ -112,20 +110,20 @@ require(["jquery", "underscore"], function ($, _){
         console.log(is_selected);
         console.log(post.url);
         return (
-          <Post title={post.title} filename={post.filename} url={post.url} img={post.image} keywords={post.keywords} is_selected={is_selected}/>
+          React.createElement(Post, {title: post.title, filename: post.filename, url: post.url, img: post.image, keywords: post.keywords, is_selected: is_selected})
         );
       });
 
         return(
-          <ul id="search-items">
-            {posts}
-          </ul>
+          React.createElement("ul", {id: "search-items"}, 
+            posts
+          )
         );
       }
 
     });
 
-    var SearchBar = React.createClass({
+    var SearchBar = React.createClass({displayName: "SearchBar",
         update_search:function(){
             var query_text=this.refs.search_input.getDOMNode().value;
             console.log(query_text);
@@ -133,18 +131,18 @@ require(["jquery", "underscore"], function ($, _){
         },
 
         render:function(){
-            return <input type="text" 
-                    id="search-bar" 
-                    ref="search_input" 
-                    placeholder="Search for a post, title, or keyword" 
-                    required="required" 
-                    value={this.props.query}
-                    onChange={this.update_search}/>
+            return React.createElement("input", {type: "text", 
+                    id: "search-bar", 
+                    ref: "search_input", 
+                    placeholder: "Search for a post, title, or keyword", 
+                    required: "required", 
+                    value: this.props.query, 
+                    onChange: this.update_search})
         }
 
     });
 
-    var SearchBox = React.createClass({
+    var SearchBox = React.createClass({displayName: "SearchBox",
 
       getInitialState:function(){
         return{
@@ -201,10 +199,10 @@ require(["jquery", "underscore"], function ($, _){
 
       render: function(){
         return(
-          <div id="search-box">
-            <SearchBar update_searchbox={this.update_state} query={this.state.query} />
-            <PostList data={this.state.filtered_data} query={this.state.query} />
-          </div>
+          React.createElement("div", {id: "search-box"}, 
+            React.createElement(SearchBar, {update_searchbox: this.update_state, query: this.state.query}), 
+            React.createElement(PostList, {data: this.state.filtered_data, query: this.state.query})
+          )
         );
       }
 
@@ -212,7 +210,7 @@ require(["jquery", "underscore"], function ($, _){
   
     
     React.render(
-      <SearchBox data={blog_data}/>,
+      React.createElement(SearchBox, {data: blog_data}),
       document.getElementById('search-container')
     );
 

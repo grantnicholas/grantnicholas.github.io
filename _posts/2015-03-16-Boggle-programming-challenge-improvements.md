@@ -6,8 +6,6 @@ title: "Boggle challenge improvements"
 Last week I wrote a simple program to calculate all the possible words one can produce out of a boggle game. The solution was a naive/brute force solution
 that required checking every possible board string against the dictionary to see if it is a valid word.
 
-Check it out here:
-
 A quick refresher on Boggle for those of you who don't know what Boggle is:
 
 <image src="http://www.blogcdn.com/blog.games.com/media/2013/02/mzl.dzqiyeiz.640x960-75.jpg"> </image>
@@ -182,7 +180,7 @@ def timeit(f):
 
 ```
 
-<image class="center-75" src="/-blog/assets/images/bog.png"></image>
+<image class="center-75" src="/assets/images/bog.png"></image>
 
 The trie based implementation severely outperforms the naive implementation on this board which is awesome! There are a few catches:
 

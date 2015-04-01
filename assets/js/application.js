@@ -1,7 +1,7 @@
 console.log('require.js');
 
 require.config({
-    "baseUrl": "/-blog/assets/js",
+    "baseUrl": "/assets/js",
     "paths": {
         "jquery": "jquery",
         "underscore": "underscore",
@@ -23,7 +23,7 @@ require(["jquery", "underscore", "searchdata"], function($, _, searchdata) {
         console.log(_);
         console.log(searchdata);
         $.ajax({
-            url: "/-blog/assets/js/app/searchbar.js",
+            url: "/assets/js/app/searchbar.js",
             dataType: "script",
             async: true
         });

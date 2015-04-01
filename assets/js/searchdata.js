@@ -14,7 +14,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Remote connection to MySQL via SSH",
-        "url": "/-blog/2014/07/29/remote-connection-to-mysql-via-ssh.html"
+        "url": "/2014/07/29/remote-connection-to-mysql-via-ssh.html"
     },
     {
         "filename": "2015-01-05-interesting-uses-for-closures",
@@ -27,7 +27,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Interesting uses for closures",
-        "url": "/-blog/2015/01/05/Interesting-uses-for-closures.html"
+        "url": "/2015/01/05/Interesting-uses-for-closures.html"
     },
     {
         "filename": "2014-08-15-javascript-clickelementinloop-callback",
@@ -50,7 +50,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Adding click handlers in a loop with javascript closures",
-        "url": "/-blog/2014/08/15/Javascript-clickelementinloop-callback.html"
+        "url": "/2014/08/15/Javascript-clickelementinloop-callback.html"
     },
     {
         "filename": "2014-09-16-nodejs-email-mailer",
@@ -70,7 +70,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Nodemailer is a super awesome way to send emails through node",
-        "url": "/-blog/2014/09/16/Nodejs-email-mailer.html"
+        "url": "/2014/09/16/Nodejs-email-mailer.html"
     },
     {
         "filename": "2014-07-24-zip-up-a-sql-file-to-bypass-upload-limits",
@@ -87,7 +87,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Bypass sql file upload limits",
-        "url": "/-blog/2014/07/24/Zip-up-a-sql-file-to-bypass-upload-limits.html"
+        "url": "/2014/07/24/Zip-up-a-sql-file-to-bypass-upload-limits.html"
     },
     {
         "filename": "2014-08-03-nodejs-error-ubuntu",
@@ -105,7 +105,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Expressjs no such file or directory error",
-        "url": "/-blog/2014/08/03/nodejs-error-ubuntu.html"
+        "url": "/2014/08/03/nodejs-error-ubuntu.html"
     },
     {
         "filename": "2014-09-01-shrink-pdf-terminal",
@@ -120,7 +120,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Shrink PDF files from the terminal",
-        "url": "/-blog/2014/09/01/Shrink-PDF-terminal.html"
+        "url": "/2014/09/01/Shrink-PDF-terminal.html"
     },
     {
         "filename": "2014-07-30-git-clear-cache",
@@ -134,7 +134,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Git clear cache",
-        "url": "/-blog/2014/07/30/git-clear-cache.html"
+        "url": "/2014/07/30/git-clear-cache.html"
     },
     {
         "filename": "2014-08-04-drupal-behaviors-preventdefault",
@@ -162,7 +162,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Override default behavior of a link in a div",
-        "url": "/-blog/2014/08/04/Drupal-behaviors-preventdefault.html"
+        "url": "/2014/08/04/Drupal-behaviors-preventdefault.html"
     },
     {
         "filename": "2014-07-31-orson-scott-card",
@@ -173,7 +173,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Favorite xkcd",
-        "url": "/-blog/2014/07/31/orson-scott-card.html"
+        "url": "/2014/07/31/orson-scott-card.html"
     },
     {
         "filename": "2014-07-18-starting-up-a-new-blog",
@@ -188,7 +188,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Starting up a new blog",
-        "url": "/-blog/2014/07/18/starting-up-a-new-blog.html"
+        "url": "/2014/07/18/starting-up-a-new-blog.html"
     },
     {
         "filename": "2015-03-20-updated-blog",
@@ -203,7 +203,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Updated blog",
-        "url": "/-blog/2015/03/20/Updated-blog.html"
+        "url": "/2015/03/20/Updated-blog.html"
     },
     {
         "filename": "2015-03-13-boggle-programming-challenge",
@@ -219,7 +219,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Boggle challenge",
-        "url": "/-blog/2015/03/13/Boggle-programming-challenge.html"
+        "url": "/2015/03/13/Boggle-programming-challenge.html"
     },
     {
         "filename": "2014-08-22-mongodb-setpath",
@@ -239,7 +239,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Mongodb set dbpath and debugging",
-        "url": "/-blog/2014/08/22/Mongodb-setpath.html"
+        "url": "/2014/08/22/Mongodb-setpath.html"
     },
     {
         "filename": "2015-03-16-boggle-programming-challenge-improvements",
@@ -260,7 +260,7 @@ var blog_data= [
         ],
         "layout": "post",
         "title": "Boggle challenge improvements",
-        "url": "/-blog/2015/03/16/Boggle-programming-challenge-improvements.html"
+        "url": "/2015/03/16/Boggle-programming-challenge-improvements.html"
     },
     {
         "categories": "mediator feature",
@@ -272,6 +272,6 @@ var blog_data= [
         "layout": "page",
         "permalink": "/about/",
         "title": "About",
-        "url": "/-blog/about/"
+        "url": "/about/"
     }
 ]

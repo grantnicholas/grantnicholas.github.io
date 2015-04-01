@@ -93,9 +93,9 @@ def each_file(files, filename, f, posts=True):
         thedate = args[0:3]
         thepost = args[3:]
         theurl = '/'.join(thedate) + '/' + '-'.join(thepost)
-        theurl = '/-blog/' + theurl + '.html'
+        theurl = '/' + theurl + '.html'
     else:
-        theurl = '/-blog/' + filename.strip('.md').strip('/') + '/'
+        theurl = '/' + filename.strip('.md').strip('/') + '/'
 
     keywords = keywords+['post'] if keywords is not None else ['post']
     keywords = filter(lambda x: x != '' and x != ' ', keywords)
