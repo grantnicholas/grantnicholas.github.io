@@ -30,6 +30,26 @@ var blog_data= [
         "url": "/2015/01/05/Interesting-uses-for-closures.html"
     },
     {
+        "filename": "2015-03-25-react.js-searchbar",
+        "keywords": [
+            "text",
+            "react",
+            "see",
+            "react.",
+            "keywords",
+            "query",
+            "searchbar",
+            "data",
+            "post",
+            "post",
+            "react.js",
+            "searchbar"
+        ],
+        "layout": "post",
+        "title": "React.js searchbar",
+        "url": "/2015/03/25/React.js-searchbar.html"
+    },
+    {
         "filename": "2014-08-15-javascript-clickelementinloop-callback",
         "keywords": [
             "function",
