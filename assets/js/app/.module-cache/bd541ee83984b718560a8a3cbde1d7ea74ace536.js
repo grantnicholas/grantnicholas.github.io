@@ -2,17 +2,15 @@ require(["jquery", "underscore"], function ($, _) {
   $(function() {
       console.log('in searchbar.js');
 
-      var Post = React.createClass({displayName: "Post",
+    var Post = React.createClass({displayName: "Post",
 
       render: function() {
-
           return (
-
             React.createElement("li", {className: this.props.is_selected}, 
               React.createElement("a", {href: this.props.url}, 
               React.createElement("div", {className: "row"}, 
                 React.createElement("div", {className: "large-3 columns"}, 
-                    React.createElement("img", {className: this.props.img ===undefined ? 'hide' : '', src: this.props.img})
+                    React.createElement("img", {src: this.props.img})
                 ), 
                 React.createElement("div", {className: "large-9 columns"}, 
                   this.props.title
@@ -26,65 +24,8 @@ require(["jquery", "underscore"], function ($, _) {
     });
 
     var PostList = React.createClass({displayName: "PostList",
-      getInitialState:function(){
-        return{
-            cursor: 0
-        }
-      },
-
-      componentDidMount: function(){
-        $('#search-bar').on('keydown', this.handleKeyPress);
-      },
-
-      handleKeyPress: function(e) {
-        if(e.keyCode=='13' || e.keyCode=='38' || e.keyCode=='40'){
-          //enter
-          if(e.keyCode=='13'){
-            var post_title = this.props.data[this.state.cursor].url;
-            location.href = post_title;
-          }
-          //up
-          if(e.keyCode=='38'){
-            this.set_cursor_up();
-          }
-          //down
-          if(e.keyCode=='40'){
-            this.set_cursor_down();
-          }
-        }
-        else{
-          this.setState({cursor : 0});
-        }
-      },
-
-      set_cursor_down: function(){
-        var len = this.props.data.length-1;
-
-        if(this.state.cursor!=len){
-          this.setState({cursor : this.state.cursor+1})
-        }
-        else{
-          this.setState({cursor : 0})
-        }
-      },
-
-      set_cursor_up: function(){
-        var len = this.props.data.length-1;
-
-        if(this.state.cursor!=0){
-          this.setState({cursor : this.state.cursor-1})
-        }
-        else{
-          this.setState({cursor : len})
-        }
-      },
-
       render: function(){
-      var count = 0
-      var outer_this = this;
       var posts = this.props.data.map(function(post){
-        var is_selected = outer_this.state.cursor == count ? "is_selected" : "";
-        count+=1;
         return (
           React.createElement(Post, {title: post.title, url: post.url, img: post.image, keywords: post.keywords, is_selected: is_selected})
         );
@@ -126,14 +67,6 @@ require(["jquery", "underscore"], function ($, _) {
             filtered_data: []
         }
       },
-
-      /*
-      The search algorithm is an approximation of fuzzy search. 
-      -split the query text into query words 
-      -look through every post and filter out data that does not meet the minimum criteria for matching the query words
-      -the min criteria for post matching is that every query word is represented in some place in the keywords of the post
-      -keywords of the post are decided by the python program kwargs.py
-      */
 
       get_filt_data: function(query_text, numdata){
         lower_text = query_text.toLowerCase();
@@ -192,13 +125,6 @@ require(["jquery", "underscore"], function ($, _) {
       }
 
     });
-  
-    
-    React.render(
-      React.createElement(SearchBox, {data: blog_data}),
-      document.getElementById('search-container')
-    );
-
 
 
   });

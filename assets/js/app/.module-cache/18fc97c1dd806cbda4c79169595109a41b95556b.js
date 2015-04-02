@@ -4,15 +4,28 @@ require(["jquery", "underscore"], function ($, _) {
 
       var Post = React.createClass({displayName: "Post",
 
-      render: function() {
+      render: function(){
 
+        if(this.props.img === undefined){
           return (
-
+            React.createElement("li", {className: this.props.is_selected}, 
+              React.createElement("a", {href: this.props.url}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "large-9 columns"}, 
+                  this.props.title
+                )
+              )
+              )
+            )
+          );
+        }
+        else{
+          return (
             React.createElement("li", {className: this.props.is_selected}, 
               React.createElement("a", {href: this.props.url}, 
               React.createElement("div", {className: "row"}, 
                 React.createElement("div", {className: "large-3 columns"}, 
-                    React.createElement("img", {className: this.props.img ===undefined ? 'hide' : '', src: this.props.img})
+                    React.createElement("img", {src: this.props.img})
                 ), 
                 React.createElement("div", {className: "large-9 columns"}, 
                   this.props.title
@@ -21,9 +34,11 @@ require(["jquery", "underscore"], function ($, _) {
               )
             )
           );
+        } 
       }
 
     });
+       
 
     var PostList = React.createClass({displayName: "PostList",
       getInitialState:function(){
@@ -37,10 +52,17 @@ require(["jquery", "underscore"], function ($, _) {
       },
 
       handleKeyPress: function(e) {
+        //enter
         if(e.keyCode=='13' || e.keyCode=='38' || e.keyCode=='40'){
-          //enter
           if(e.keyCode=='13'){
-            var post_title = this.props.data[this.state.cursor].url;
+            var count = 0;
+            var cursor = this.state.cursor;
+            var the_post = this.props.data.filter(function(post){
+              var bool = cursor == count;
+              count+=1;
+              return bool;
+            });
+            var post_title = the_post[0].url;
             location.href = post_title;
           }
           //up
@@ -66,6 +88,7 @@ require(["jquery", "underscore"], function ($, _) {
         else{
           this.setState({cursor : 0})
         }
+        console.log(this.state.cursor);
       },
 
       set_cursor_up: function(){
@@ -77,6 +100,7 @@ require(["jquery", "underscore"], function ($, _) {
         else{
           this.setState({cursor : len})
         }
+        console.log(this.state.cursor);
       },
 
       render: function(){
@@ -85,8 +109,10 @@ require(["jquery", "underscore"], function ($, _) {
       var posts = this.props.data.map(function(post){
         var is_selected = outer_this.state.cursor == count ? "is_selected" : "";
         count+=1;
+        console.log(is_selected);
+        console.log(post.url);
         return (
-          React.createElement(Post, {title: post.title, url: post.url, img: post.image, keywords: post.keywords, is_selected: is_selected})
+          React.createElement(Post, {title: post.title, filename: post.filename, url: post.url, img: post.image, keywords: post.keywords, is_selected: is_selected})
         );
       });
 
@@ -102,6 +128,7 @@ require(["jquery", "underscore"], function ($, _) {
     var SearchBar = React.createClass({displayName: "SearchBar",
         update_search:function(){
             var query_text=this.refs.search_input.getDOMNode().value;
+            console.log(query_text);
             this.props.update_searchbox(query_text);
         },
 
@@ -127,15 +154,7 @@ require(["jquery", "underscore"], function ($, _) {
         }
       },
 
-      /*
-      The search algorithm is an approximation of fuzzy search. 
-      -split the query text into query words 
-      -look through every post and filter out data that does not meet the minimum criteria for matching the query words
-      -the min criteria for post matching is that every query word is represented in some place in the keywords of the post
-      -keywords of the post are decided by the python program kwargs.py
-      */
-
-      get_filt_data: function(query_text, numdata){
+      get_filt_data: function(query_text){
         lower_text = query_text.toLowerCase();
         query_words = lower_text.split(' ').filter(function(word){
           return word !='' && word !=' ';
@@ -143,8 +162,12 @@ require(["jquery", "underscore"], function ($, _) {
 
         var filt_data = this.props.data.filter(function(post){
 
+          var boolwords = post.keywords.map(function(word){
+            return word.indexOf(lower_text)!=-1
+          });
 
-          var boolwords = query_words.map(function(word){
+          var boolwords2 = query_words.map(function(word){
+            // return _.contains(post.keywords, word)
             return _.some(
               post.keywords.map(function(kword){
                 return kword.indexOf(word)!=-1
@@ -152,13 +175,14 @@ require(["jquery", "underscore"], function ($, _) {
             );
           });
 
-          return ( 
-            _.all(boolwords)
+          return ( _.all(boolwords2)
+            // post.filename.indexOf(lower_text)!=-1 ||
+            // _.some(boolwords) || 
+            // _.all(boolwords2)
           )
-
         });
 
-        var top_filt_data = _.first(filt_data, numdata)
+        var top_filt_data = _.first(filt_data, 5)
         return top_filt_data;
       },
 
@@ -170,16 +194,9 @@ require(["jquery", "underscore"], function ($, _) {
         this.setState({query_text: q_text})
       },
 
-      /*
-      Due to the one-way data flow of React, we need to a way to modify the searchbox and update its state from "downstream".
-      To do this we pass a function as a prop that lets us modify the state of the searchbox object. 
-      */
-
       update_state: function(query_text){
         this.set_query_text(query_text);
-        this.set_filt_data(
-          this.get_filt_data(query_text, 5)
-        );
+        this.set_filt_data(this.get_filt_data(query_text));
       },
 
       render: function(){
