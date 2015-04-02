@@ -1,30 +1,32 @@
+// require(["jquery", "underscore", "searchdata"], function ($, _, blog_data) {
   $(function() {
       console.log('in searchbar.js');
+      var blog_data = DATA;
 
-      var Post = React.createClass({
+      var Post = React.createClass({displayName: "Post",
 
       render: function() {
 
           return (
 
-            <li className={this.props.is_selected}> 
-              <a href= {this.props.url}>
-              <div className = "row">
-                <div className="large-3 columns">
-                    <img className={this.props.img ===undefined ? 'hide' : ''} src={this.props.img}/>
-                </div>
-                <div className="large-9 columns">
-                  {this.props.title}
-                </div>
-              </div>
-              </a>
-            </li>
+            React.createElement("li", {className: this.props.is_selected}, 
+              React.createElement("a", {href: this.props.url}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "large-3 columns"}, 
+                    React.createElement("img", {className: this.props.img ===undefined ? 'hide' : '', src: this.props.img})
+                ), 
+                React.createElement("div", {className: "large-9 columns"}, 
+                  this.props.title
+                )
+              )
+              )
+            )
           );
       }
 
     });
 
-    var PostList = React.createClass({
+    var PostList = React.createClass({displayName: "PostList",
       getInitialState:function(){
         return{
             cursor: 0
@@ -85,38 +87,38 @@
         var is_selected = outer_this.state.cursor == count ? "is_selected" : "";
         count+=1;
         return (
-          <Post title={post.title} url={post.url} img={post.image} keywords={post.keywords} is_selected={is_selected}/>
+          React.createElement(Post, {title: post.title, url: post.url, img: post.image, keywords: post.keywords, is_selected: is_selected})
         );
       });
 
         return(
-          <ul id="search-items">
-            {posts}
-          </ul>
+          React.createElement("ul", {id: "search-items"}, 
+            posts
+          )
         );
       }
 
     });
 
-    var SearchBar = React.createClass({
+    var SearchBar = React.createClass({displayName: "SearchBar",
         update_search:function(){
             var query_text=this.refs.search_input.getDOMNode().value;
             this.props.update_searchbox(query_text);
         },
 
         render:function(){
-            return <input type="text" 
-                    id="search-bar" 
-                    ref="search_input" 
-                    placeholder="Search for a post, title, or keyword" 
-                    required="required" 
-                    value={this.props.query}
-                    onChange={this.update_search}/>
+            return React.createElement("input", {type: "text", 
+                    id: "search-bar", 
+                    ref: "search_input", 
+                    placeholder: "Search for a post, title, or keyword", 
+                    required: "required", 
+                    value: this.props.query, 
+                    onChange: this.update_search})
         }
 
     });
 
-    var SearchBox = React.createClass({
+    var SearchBox = React.createClass({displayName: "SearchBox",
 
       getInitialState:function(){
         return{
@@ -183,10 +185,10 @@
 
       render: function(){
         return(
-          <div id="search-box">
-            <SearchBar update_searchbox={this.update_state} query={this.state.query} />
-            <PostList data={this.state.filtered_data} query={this.state.query} />
-          </div>
+          React.createElement("div", {id: "search-box"}, 
+            React.createElement(SearchBar, {update_searchbox: this.update_state, query: this.state.query}), 
+            React.createElement(PostList, {data: this.state.filtered_data, query: this.state.query})
+          )
         );
       }
 
@@ -194,10 +196,11 @@
   
     
     React.render(
-      <SearchBox data={blog_data}/>,
+      React.createElement(SearchBox, {data: blog_data}),
       document.getElementById('search-container')
     );
 
 
 
   });
+// });

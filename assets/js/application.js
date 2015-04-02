@@ -1,11 +1,10 @@
-console.log('require.js');
+  console.log('require.js app');
 
-require.config({
+  require.config({
     "baseUrl": "/assets/js",
     "paths": {
         "jquery": "jquery",
         "underscore": "underscore",
-        "searchdata": "searchdata",
     },
     "shim": {
         "jquery": {
@@ -13,20 +12,12 @@ require.config({
         },
         "underscore": {
             "exports": "_"
-        },
+        }
     }
-});
+  });
 
-require(["jquery", "underscore", "searchdata"], function($, _, searchdata) {
+require(["jquery", "underscore"], function($, _) {
     $(function() {
-        console.log($);
-        console.log(_);
-        console.log(searchdata);
-        $.ajax({
-            url: "/assets/js/app/searchbar.js",
-            dataType: "script",
-            async: true
-        });
-
+        console.log('base application loaded');
     });
 });

@@ -1,6 +1,8 @@
-require(["jquery", "underscore"], function ($, _) {
+require(["jquery", "underscore", "searchdata"], function ($, _, blog_data) {
   $(function() {
       console.log('in searchbar.js');
+      console.log(blog_data);
+      console.log('hi');
 
       var Post = React.createClass({displayName: "Post",
 

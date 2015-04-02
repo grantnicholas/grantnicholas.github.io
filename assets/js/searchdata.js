@@ -1,4 +1,4 @@
-var blog_data= [
+blog_data= [
     {
         "filename": "2014-07-29-remote-connection-to-mysql-via-ssh",
         "keywords": [

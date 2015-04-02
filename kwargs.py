@@ -124,7 +124,7 @@ def main():
 
     # pprint(files)
     with open('./assets/js/searchdata.js', 'w') as f:
-        f.write('var blog_data= ')
+        f.write('blog_data= ')
         f.write(json.dumps(files, sort_keys=True, indent=4, separators=(',',': ')))
 
 
