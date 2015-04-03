@@ -11,33 +11,6 @@ layout: default
             <img class="spinner" src="{{ "/assets/images/spinner.png" | prepend: site.baseurl }}" />
             <!-- <script type="text/jsx;harmony=true" src="{{ "/assets/js/searchbar.js" | prepend: site.baseurl }}"></script> -->
             <!-- <script src="{{ "/assets/js/app/searchbar.js" | prepend: site.baseurl }}"></script> -->
-            <script type="text/javascript">
-              require.config({
-                "baseUrl": "/assets/js",
-                "paths": {
-                    "jquery": "jquery",
-                    "underscore": "underscore",
-                    "searchdata": "searchdata",
-                    "searchbar" : "app/searchbar",
-                },
-                "shim": {
-                    "jquery": {
-                        "exports": "$"
-                    },
-                    "underscore": {
-                        "exports": "_"
-                    },
-                    "searchbar": {
-                        "deps": ["jquery", "underscore", "searchdata"]
-                    }
-                }
-              });
-              require(["jquery", "underscore", "searchdata", "searchbar"], function($, _, blog_data) {
-                $(function() {
-                    console.log('indexapp');
-                });
-              });
-            </script>
         </div>
       </div>
     </div>
