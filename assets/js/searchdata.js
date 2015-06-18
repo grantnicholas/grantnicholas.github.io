@@ -50,6 +50,20 @@ blog_data= [
         "url": "/2015/03/25/React.js-searchbar.html"
     },
     {
+        "filename": "2015-06-18-profiling-and-optimizing-python-code",
+        "keywords": [
+            "post",
+            "profiling",
+            "and",
+            "optimizing",
+            "python",
+            "code"
+        ],
+        "layout": "post",
+        "title": "Profiling and optimizing python code",
+        "url": "/2015/06/18/Profiling-and-optimizing-python-code.html"
+    },
+    {
         "filename": "2014-08-15-javascript-clickelementinloop-callback",
         "keywords": [
             "function",
@@ -281,6 +295,28 @@ blog_data= [
         "layout": "post",
         "title": "Boggle challenge improvements",
         "url": "/2015/03/16/Boggle-programming-challenge-improvements.html"
+    },
+    {
+        "filename": "2015-06-01-named-tuple-python-trick",
+        "keywords": [
+            "return",
+            "get",
+            "python",
+            "object",
+            "class",
+            "values",
+            "small",
+            "data",
+            "order",
+            "post",
+            "named",
+            "tuple",
+            "python",
+            "trick"
+        ],
+        "layout": "post",
+        "title": "Named tuple python trick",
+        "url": "/2015/06/01/Named-tuple-python-trick.html"
     },
     {
         "categories": "mediator feature",
