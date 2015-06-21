@@ -171,6 +171,25 @@ blog_data= [
         "url": "/2014/07/30/git-clear-cache.html"
     },
     {
+        "filename": "2015-06-21-profiling-your-code-part-1",
+        "keywords": [
+            "function",
+            "distance",
+            "code",
+            "computing",
+            "python",
+            "time",
+            "memoize",
+            "data",
+            "immutable",
+            "post",
+            "profiling-your-code-part-1"
+        ],
+        "layout": "post",
+        "title": "Profiling-your-code-part-1",
+        "url": "/-blog/2015/06/21/Profiling-your-code-part-1.html"
+    },
+    {
         "filename": "2014-08-04-drupal-behaviors-preventdefault",
         "keywords": [
             "advance",
@@ -226,6 +245,7 @@ blog_data= [
     },
     {
         "filename": "2015-03-20-updated-blog",
+        "image": "/-blog/assets/images/cover.jpg",
         "keywords": [
             "spring",
             "built",
@@ -254,6 +274,26 @@ blog_data= [
         "layout": "post",
         "title": "Boggle challenge",
         "url": "/2015/03/13/Boggle-programming-challenge.html"
+    },
+    {
+        "filename": "2015-06-18-profiling-and-optimizing-your-python-code",
+        "keywords": [
+            "write",
+            "code",
+            "do",
+            "python",
+            "rewrite",
+            "try",
+            "numba",
+            "benchmarks",
+            "numpy",
+            "check",
+            "post",
+            "profiling-and-optimizing-your-code"
+        ],
+        "layout": "post",
+        "title": "Profiling-and-optimizing-your-code",
+        "url": "/-blog/2015/06/18/Profiling-and-optimizing-your-python-code.html"
     },
     {
         "filename": "2014-08-22-mongodb-setpath",
@@ -317,6 +357,28 @@ blog_data= [
         "layout": "post",
         "title": "Named tuple python trick",
         "url": "/2015/06/01/Named-tuple-python-trick.html"
+    },
+    {
+        "filename": "2015-06-01-named-tuple-python-trick",
+        "keywords": [
+            "return",
+            "get",
+            "python",
+            "object",
+            "class",
+            "values",
+            "small",
+            "data",
+            "order",
+            "post",
+            "named",
+            "tuple",
+            "python",
+            "trick"
+        ],
+        "layout": "post",
+        "title": "Named tuple python trick",
+        "url": "/-blog/2015/06/01/Named-tuple-python-trick.html"
     },
     {
         "categories": "mediator feature",
