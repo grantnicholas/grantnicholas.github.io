@@ -1,7 +1,7 @@
 import glob
 from pprint import pprint
 import json
-from yaml_parse import parse_yaml
+from yaml import load as parse_yaml
 
 
 STOPWORDS = [
